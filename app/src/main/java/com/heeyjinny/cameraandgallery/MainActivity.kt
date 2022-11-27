@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
     //카메라 앱 호출 런처: TakePicture를 사용하기 따문에 제네릭 Uri 지정
     lateinit var cameraLauncher:ActivityResultLauncher<Uri>
 
-
+    //7-2
+    //갤러리 호출 런처: GetContent()를 사용하므로 제네릭 String 사용
     lateinit var galleryLauncher:ActivityResultLauncher<String>
 
     //뷰바인딩
@@ -105,6 +106,10 @@ class MainActivity : AppCompatActivity() {
             if(isSuccess) { binding.imagePreview.setImageURI(photoUri) }
         }
 
+        //7-3
+        //갤러리 호출런처 초기화
+        //GetContent()사용
+        //이미지의 uri를 화면에 불러와 세팅
         galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             binding.imagePreview.setImageURI(uri)
         }
@@ -121,9 +126,12 @@ class MainActivity : AppCompatActivity() {
         binding.buttonCamera.setOnClickListener {
             cameraPermission.launch(Manifest.permission.CAMERA)
         }
-//        binding.buttonGallery.setOnClickListener {
-//            openGallery()
-//        }
+
+        //7
+        //갤러리버튼 클릭 시 openGallery()메서드 호출코드 작성
+        binding.buttonGallery.setOnClickListener {
+            openGallery()
+        }
     }
 
     //4
@@ -158,7 +166,15 @@ class MainActivity : AppCompatActivity() {
         cameraLauncher.launch(photoUri)
     }
 
+    //7-1
+    //갤러리 버튼을 클릭했을 때 갤러리 이미지 불러오는 메서드 openGallery() 생성
+    //우선 이미지를 불러오는 갤러리런처 전역변수로 생성...
+
     fun openGallery() {
+        //7-4
+        //galleryLauncher 프로퍼티에 지정한 제네릭은 String이지만
+        //launch()메서드의 파라미터는 권한문자열이 아닌 마임타입 형태로 파라미터 입력
+        //모든종류(*)를 불러올 수 있도록 "image/*" 입력
         galleryLauncher.launch("image/*")
     }
 }//MainActivity

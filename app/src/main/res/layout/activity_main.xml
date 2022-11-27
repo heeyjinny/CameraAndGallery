@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
 <!--  버튼 및 이미지뷰 추가  -->
+<!--  추가 후 MainActivity.kt 코드작성  -->
     <Button
         android:id="@+id/buttonCamera"
         android:layout_width="wrap_content"
@@ -14,7 +15,7 @@
         android:layout_marginBottom="16dp"
         android:text="카메라"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGallery"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -26,5 +27,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+
+<!--  갤러리 버튼 추가  -->
+<!--  추가 후 MainActivity.kt 코드작성  -->
+    <Button
+        android:id="@+id/buttonGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="갤러리"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCamera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

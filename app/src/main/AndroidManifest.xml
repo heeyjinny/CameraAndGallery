@@ -35,6 +35,8 @@
         </activity>
 
 <!--  provider설정 추가  -->
+<!--  설정 후 실행하면 카메라 권한 창이 뜨고 권한설정하여 카메라 앱 실행가능  -->
+<!--  다음으로...갤러리에서 사진 가져오는 코드 작성 activity_main.xml 수정  -->
         <provider
             android:authorities="${applicationId}.provider"
             android:name="androidx.core.content.FileProvider"
