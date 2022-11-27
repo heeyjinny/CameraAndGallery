@@ -12,6 +12,10 @@ import androidx.core.content.FileProvider
 import com.heeyjinny.cameraandgallery.databinding.ActivityMainBinding
 import java.io.File
 
+//0
+//권장하는 CameraX 가 아닌 지원종료된 Camera사용...
+//추후 CameraX 다뤄보기
+
 //1
 //카메라 UI화면 만들고 권한 요청하기
 
@@ -115,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         storagePermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    }
+    }//onCreate
 
     //3
     //카메라 앱 권한 호출
