@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--  설정해둔 경로에 한해서 FileProvider를 통해 접근이 가능하도록 설정  -->
+    <external-path
+        name="my_images"
+        path="Android/data/com.heeyjinny.cameraandgallery/files/Pictures"/>
+
+<!--  생성한 path를 AndroidManifest.xml 에 provider설정 추가  -->
+
+</paths>
