@@ -51,13 +51,13 @@ class MainActivity : AppCompatActivity() {
 
         //3
         //카메라 권한과 저장소 권한 초기화
-        cameraPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){
+//        cameraPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){
+//
+//        }
 
-        }
-
-        storagePermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){
-
-        }
+//        storagePermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){
+//
+//        }
 
         //3-3
         //실제 카메라의 촬영 결과물을 주고받는 용도로 사용되는 TakePicture()사용
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
 
         //앞에서 생성한 파일의 Uri생성 후 photoUri에 담고 launch()메서드에 전달해 카메라 호출
 
-
+한
     }
 
 
